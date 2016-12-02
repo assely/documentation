@@ -17,7 +17,7 @@ The Assely framework perfectly integrates with [Bedrock](https://roots.io/bedroc
 Basically follow up the [Bedrock documentation](https://roots.io/bedrock/docs/installing-bedrock/). It is simple and well-explanatory.
 
 <a name="scaffording-assely-application"></a>
-### [Scaffording Assely application](#scaffording-assely-application)
+### [Scaffolding Assely application](#scaffording-assely-application)
 
 [alert type="info"]This instruction use our [installer](https://github.com/assely/installer). However, detailed informations about other ways of creating new Assely applications you will find in [general installation documentation](#installing).[/alert]
 
