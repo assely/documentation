@@ -34,7 +34,7 @@ wp assely:make metabox MovieDetails
 This will create metabox with `moviedetails` slug, but you can specify it with `--slug` option.
 
 ```bash
-wp assely:make metabox MovieDetails --slug="movie-details"
+wp assely:make metabox MovieDetails --slug="movie_details"
 ```
 
 ##### Specifying owners
@@ -65,7 +65,7 @@ class MovieDetails extends Metabox
      *
      * @var string
      */
-    public $slug = 'movie-details';
+    public $slug = 'movie_details';
 
     /**
      * Describe metabox relationships.
