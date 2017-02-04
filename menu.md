@@ -11,7 +11,7 @@
 
 The [Menus](https://codex.wordpress.org/Navigation_Menus) are lists of links that appear on your application.
 
-Registering menus allow for creating easily customizable menus, which can be managed inside `Apperance > Menus` administration panel.
+Registering menus allow for creating easily customizable menus, which can be managed inside `Appearance > Menus` administration panel.
 
 <a name="basics-of-menus"></a>
 ## [Basics of menus](#basics-of-menus)
@@ -29,7 +29,7 @@ Menu::create('primary');
 
 ##### Arguments
 
-Create method accepts options as second argument.
+Create method accepts options as the second argument.
 
 ```php
 Menu::create('primary', [
@@ -66,7 +66,7 @@ You can check if menu contains any items with `isActive` method.
 <a name="rendering-menu-in-templates"></a>
 ### [Rendering menu in templates](#rendering-menu-in-templates)
 
-Grab all menu items with `items` method. This will return collection of `Assely\Adapter\Menu` instances.
+Grab all menu items with `items` method. This will return a collection of `Assely\Adapter\Menu` instances.
 
 ```html
 <!-- resources/views/index.blade.php -->
@@ -78,7 +78,7 @@ Grab all menu items with `items` method. This will return collection of `Assely\
 </div>
 ```
 
-Now, you only need to loop through items in foreach statement.
+Now, you only need to loop through items in a @foreach statement.
 
 ```html
 <!-- resources/views/menu/nav.blade.php -->

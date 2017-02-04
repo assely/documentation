@@ -32,7 +32,7 @@ if (Auth::check()) {
 <a name="authenticate-with-user-instance"></a>
 ### [Authenticate with User instance](#authenticate-with-user-instance)
 
-You may want to login exsiting user with his `Assely\Adapter\User` instance.
+You may want to login existing user with his `Assely\Adapter\User` instance.
 
 ```php
 $user = User::find(1);
@@ -47,7 +47,7 @@ Auth::login($user, true);
 <a name="authenticate-with-credentials"></a>
 ### [Authenticate with credentials](#authenticate-with-credentials)
 
-You can attempt to login user with credentials. `attempt` method accepts array of user login and password values. If attempt was successful `true` is returned, if not - `false`.
+You can attempt to login user with credentials. `attempt` method accepts an array of user login and password values. If the attempt was successful `true` is returned, if not - `false`.
 
 ```php
 // Attemp login

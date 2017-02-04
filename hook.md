@@ -13,7 +13,7 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-Hooks, as the [definition](http://codex.wordpress.org/Glossary#Hook) says, are events that call the action or filter functions, previously hooked to that events. In other words, [Hook API](http://codex.wordpress.org/Plugin_API) allows you to trigger yours application logic at specific times.
+Hooks, as the [definition](http://codex.wordpress.org/Glossary#Hook) says, are events that call the action or filter functions, previously hooked to that events. In other words, [Hook API](http://codex.wordpress.org/Plugin_API) allows you to trigger your application logic at specific times.
 
 <a name="creating-hooks"></a>
 ## [Creating Hooks](#creating-hooks)
@@ -53,7 +53,7 @@ Hook::filter($name, $callback);
 <a name="callback-functions"></a>
 ### [Callback Functions](#callback-functions)
 
-The Hook callback function can be defined in various ways. There is no recommendations, use the best in a given situation.
+The Hook callback function can be defined in various ways. There are no recommendations, use the best in a given situation.
 
 #### Method name
 
@@ -96,7 +96,7 @@ Hook::action($name, 'functionName');
 <a name="piority-and-number-of-arguments"></a>
 ### [Piority and number of arguments](#piority-and-number-of-arguments)
 
-You may need to specify the order in which the functions associated with a particular hook are executed. Use `piority` option, lower number = higher piority.
+You may need to specify the order in which the functions associated with a particular hook are executed. Use `priority` option, lower number = higher priority.
 
 Some hooks can pass more than one parameters to your callbacks. You can define it with `numberOfArguments` option.
 
@@ -110,7 +110,7 @@ Hook::action($name, $callback, [
 <a name="basics-of-hooking"></a>
 ## [Basics of Hooking](#basics-of-hooking)
 
-Hook creation itself is not enough. After constructing, each hook must make some operation. It can be dispached, detached or performed.
+Hook creation itself is not enough. After constructing, each hook must make some operation. It can be dispatched, detached or performed.
 
 <a name="dispaching-hooks"></a>
 ### [Dispaching Hooks](#dispaching-hooks)
@@ -137,7 +137,7 @@ Hook::filter('name')->perform();
 <a name="removing-hooks"></a>
 ### [Detaching Hooks](#removing-hooks)
 
-Calling `detach` method will remove previously dispached hook.
+Calling `detach` method will remove previously dispatched hook.
 
 ```php
 Hook::action('name', $callback)->detach();

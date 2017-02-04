@@ -14,16 +14,16 @@ The Assely framework provides a bunch of ready to use WP-CLI commands, which hel
 <a name="usage"></a>
 ## [Usage](#usage)
 
-Before running the commands below make sure to navigate into the WordPress root directory (like when using the WP-CLI), otherwise they won't be available.
+Before running the commands below make sure to navigate to the WordPress root directory (like when using the WP-CLI), otherwise, they won't be available.
 
-[alert type="warning"]You should execute commands within the virtual machine, while using Vagrant.[/alert]
+[alert type="warning"]You should execute commands within the virtual machine while using Vagrant.[/alert]
 
 For Trellis, you have to login into Vagrant with `vagrant ssh` command and navigate to the `/srv/www/<project-name>/current` directory.
 
 <a name="commands"></a>
 ## [Commands](#commands)
 
-The Assely framework provides bunch of ready to use WP-CLI commands, which help you develop and debug your application.
+The Assely framework provides a bunch of ready to use WP-CLI commands, which help you develop and debug your application.
 
 [alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
 
@@ -46,7 +46,7 @@ wp assely:make controller <classname>
 
 #### Creating posttypes
 
-Scaffolds application posttype to `app\Posttypes` directory.
+Scaffolds application post type to `app\Posttypes` directory.
 
 ```bash
 wp assely:make posttype <classname>

@@ -4,7 +4,7 @@
     + [Route Parameters](#route-parameters)
     + [Route Conditions](#route-conditions)
 - [Creating Routes](#creating-routes)
-	+ [Routing Homepage](#routing-homepage)
+    + [Routing Homepage](#routing-homepage)
     + [Routing Posttypes](#routing-posttypes)
     + [Routing Taxonomies](#routing-taxonomies)
     + [Routing Search Results](#routing-search-results)
@@ -28,7 +28,7 @@ Adding routes is pretty straightforward, just give URL to which route has to ans
 
 [alert type="warning"]Router respond only to registered and valid rewrite rules. Do not register any rewrite rules by itself.[/alert]
 
-[alert type="info"]Remember! Routes registration order matters, only first matched route will be resolved. More specific ones should goes first, general last.[/alert]
+[alert type="info"]Remember! Routes registration order matters, only first matched route will be resolved. More specific ones should go first, general last.[/alert]
 
 ```php
 Route::get('/', $callback);
@@ -61,45 +61,44 @@ WordPress uses specific names for particular properties. For example, `name` for
 
 ```php
 Route::get('movie/{name}', function($name) {
-	$movie = Post::type('movie')->find($name);
+    $movie = Post::type('movie')->find($name);
 });
 
 Route::get('genre/{term}', function($term) {
-	$term = Term::type('genre')->find($name);
+    $term = Term::type('genre')->find($name);
 });
 ```
 
 As you can see, the parameter values are passed into your route's callback when it is resolved. You can use them to do further queries.
 
-In the following part of this documentation you will find concrete examples how to correctly
- name your routes. Let's move on!
+In the following part of this documentation, you will find concrete examples how to correctly name your routes. Let's move on!
 
 <a name="route-conditions"></a>
 ### [Route Conditions](#route-conditions)
 
-Routes can be additional guarded with conditions. Conditioned routes will be resolved only when all its conditions meets. That way you can easily create routes for specific posts, pages etc.
+Routes can be additional guarded with conditions. Conditioned routes will be resolved only when all its conditions meet. That way you can easily create routes for specific posts, pages etc.
 
 [alert type="info"]All available conditions and its aliases you can find in [WordpressConditions](https://github.com/assely/framework/blob/master/src/Assely/Routing/WordpressConditions.php#L12) class.[/alert]
 
-To set conditions on selected route, simply call `where` method with array of conditions as parameter.
+To set conditions on selected route, simply call `where` method with an array of conditions as the parameter.
 
 ```php
 Route::get('{name}', function($name) {
-	//
+    //
 })->where([
-	'post' => 'hello-world'
+    'post' => 'hello-world'
 ]);
 ```
 
-[alert type="warning"]Caution! There are conditions that only work inside loop (e.g. `sticky`). They cannot be use as route counditions.[/alert]
+[alert type="warning"]Caution! There are conditions that only work inside a loop (e.g. `sticky`). They cannot be used as route conditions.[/alert]
 
-Route above will be only resolved on post with `hello-world` slug. Take a note, you can pass multiple condition values in array `'post' => [2, 'sample-post', 'Hello World!']`. Its can be id, slug or even title.
+The route above will be only resolved on a post with `hello-world` slug. Take a note, you can pass multiple condition values in array `'post' => [2, 'sample-post', 'Hello World!']`. It can be id, slug or even title.
 
 ```php
 Route::get('{name}', function($name) {
-	//
+    //
 })->where([
-	'post' => [2, 'sample-post', 'Hello World!']
+    'post' => [2, 'sample-post', 'Hello World!']
 ]);
 ```
 
@@ -108,7 +107,7 @@ Route::get('{name}', function($name) {
 
 As was said before, you have to use specific names for route properties. Router requires these names to property resolve its values from global WP_Query.
 
-This section contains list of all available routes, which comes with WordPress and don't require to register any of custom rewrite rules.
+This section contains a list of all available routes, which comes with WordPress and don't require to register any of custom rewrite rules.
 
 <a name="routing-homepage"></a>
 ### [Routing Homepage](#routing-homepage)
@@ -117,15 +116,15 @@ Routing to the homepage is easy as pie:
 
 ```php
 Route::get('/', function() {
-	//
+    //
 });
 ```
 
-Your website uses a static page and you want a explicitly route? Narrow route from above with `front` condition.
+Your website uses a static page and you want an explicit route? Narrow route from above with `front` condition.
 
 ```php
 Route::get('/', function() {
-	//
+    //
 })->where([
     'front' => true
 ]);
@@ -136,11 +135,11 @@ Route::get('/', function() {
 
 #### Single Post
 
-The `{name}` parameter allows you to route to the view of single post.
+The `{name}` parameter allows you to route to the view of the single post.
 
 ```php
 Route::get('{name}', function($name) {
-	//
+    //
 });
 ```
 
@@ -150,11 +149,11 @@ Use `{pagename}` to target single pages.
 
 ```php
 Route::get('{pagename}', function($pagename) {
-	//
+    //
 });
 ```
 
-If you would like to target also children pages, add second route with simple regular expression before parameter.
+If you would like to target also children pages, add the second route with simple regular expression before parameter.
 
 ```php
 Route::get('(.+)/{pagename}', function($pagename) {
@@ -176,7 +175,7 @@ Now, everything before `{pagename}` is optional, so both pages and children page
 
 ```php
 Route::get('movie/{name}', function($name) {
-	//
+    //
 });
 ```
 
@@ -184,7 +183,7 @@ Route::get('movie/{name}', function($name) {
 
 ```php
 Route::get('page/{paged}', function($paged) {
-	//
+    //
 });
 ```
 
@@ -192,7 +191,7 @@ Route::get('page/{paged}', function($paged) {
 
 ```php
 Route::get('movie/page/{paged}', function($name, $paged) {
-	//
+    //
 });
 ```
 
@@ -203,7 +202,7 @@ Route::get('movie/page/{paged}', function($name, $paged) {
 
 ```php
 Route::get('category/{category_name}', function($category_name) {
-	//
+    //
 });
 ```
 
@@ -211,7 +210,7 @@ Route::get('category/{category_name}', function($category_name) {
 
 ```php
 Route::get('tag/{tag}', function($tag) {
-	//
+    //
 });
 ```
 
@@ -219,7 +218,7 @@ Route::get('tag/{tag}', function($tag) {
 
 ```php
 Route::get('genre/{term}', function($term) {
-	//
+    //
 });
 ```
 
@@ -227,7 +226,7 @@ Route::get('genre/{term}', function($term) {
 
 ```php
 Route::get('genre/{term}/page/{paged}', function($term, $paged) {
-	//
+    //
 });
 ```
 
@@ -236,7 +235,7 @@ Route::get('genre/{term}/page/{paged}', function($term, $paged) {
 
 ```php
 Route::get('search/{s}', function($s) {
-	//
+    //
 });
 ```
 
@@ -247,7 +246,7 @@ Route::get('search/{s}', function($s) {
 
 ```php
 Route::get('author/{author_name}', function($author_name) {
-	//
+    //
 });
 ```
 
@@ -255,6 +254,6 @@ Route::get('author/{author_name}', function($author_name) {
 
 ```php
 Route::get('author/{author_name}/page/{paged}', function($author_name, $paged) {
-	//
+    //
 });
 ```

@@ -47,7 +47,7 @@ wp assely:make posttype Movies --slug="movie"
 
 #### Manually created class file
 
-Make file with class that extends base `Assely\Posttype\Posttype` class.
+Make a file with the class that extends base `Assely\Posttype\Posttype` class.
 
 The `slug` property is required. This value determines under which name your posttype will be registered and accessible.
 
@@ -112,7 +112,7 @@ All posttypes are registered in the `config/singularities.php` configuration fil
 <a name="the-arguments-method"></a>
 ### [The Arguments method](#the-arguments-method)
 
-The `arguments` method must always return an array of post type registration parameters. You can use all of the default [WordPress parameters](https://codex.wordpress.org/Function_Reference/register_post_type#Parameters), but there are also some "framework specific".
+The `arguments` method must always return an array of post type registration parameters. You can use all of the default [WordPress parameters](https://codex.wordpress.org/Function_Reference/register_post_type#Parameters), but there is also some "framework specific".
 
 ```php
 public function arguments()
@@ -125,12 +125,12 @@ public function arguments()
 
 | Parameter name | Default value | Description |
 |---------|---------|---------|
-| title | `[]` | Array of titles, where first element is singular variant, second a plural |
+| title | `[]` | Array of titles, where the first element is singular variant, second a plural |
 
 <a name="the-columns-method"></a>
 ### [The Columns method](#the-columns-method)
 
-The `columns` method allows to define custom posttype columns which are displayed on the list of posts.
+The `columns` method allows for defining custom posttype columns which are displayed on the list of posts.
 
 Posttypes accepts two kinds of columns: taxonomy and metabox.
 
@@ -149,7 +149,7 @@ public function columns()
 <a name="using-posttype"></a>
 ## [Using posttype](#using-posttype)
 
-Injecting the custom posttype repository provides fluent access to it's posts. However, you can also use `Post` facade.
+Injecting the custom posttype repository provides fluent access to its posts. However, you can also use `Post` facade.
 
 ```php
 Post::type('movies')->find(1);
@@ -158,11 +158,11 @@ Post::type('movies')->find(1);
 <a name="quering-posts"></a>
 ### [Quering posts](#quering-posts)
 
-Of course, once you created and registered your Posttype, you can start retrieving posts data for your views. In this section you will learn how you can query your custom post types.
+Of course, once you created and registered your Posttype, you can start retrieving posts data for your views. In this section, you will learn how you can query your custom post types.
 
 #### Fetching multiple posts
 
-The `all` method will retrive all of the posttype posts. This method returns an instance of `Illuminate\Support\Collection`, so you can easily modify results with [diffrent methods](https://laravel.com/docs/5.2/collections#available-methods).
+The `all` method will retrieve all of the posttype posts. This method returns an instance of `Illuminate\Support\Collection`, so you can easily modify results with [diffrent methods](https://laravel.com/docs/5.2/collections#available-methods).
 
 ```php
 use App\Posttypes\Movies;
@@ -175,7 +175,7 @@ public function index(Movies $movies) {
 <a name="paginating-posts"></a>
 ### [Paginating posts](#paginating-posts)
 
-Before quering posts you can declare if they have to be paginated. Use `paginate` method.
+Before querying posts, you can declare if they have to be paginated. Use `paginate` method.
 
 It requires current page number to be passed as method argument.
 
@@ -191,7 +191,7 @@ public function index(Movies $movies, $paged = 1) {
 
 #### Retrieving single post
 
-You can also immediately search for single post. Pass post id or slug as the `find` method argument.
+You can also immediately search for the single post. Pass post id or slug as the `find` method argument.
 
 ```php
 use App\Posttypes\Movies;
@@ -207,15 +207,15 @@ public function index(Movies $movies) {
 
 ##### Not Found Query Exception
 
-Sometimes you want to throw an exception when post was not found. The `findOrFail` method returns found post, but if not `Assely\Database\QueryException` will be thrown.
+Sometimes you want to throw an exception when a post was not found. The `findOrFail` method returns the found post, but if not `Assely\Database\QueryException` will be thrown.
 
 ```php
 $movies->findOrFail(1);
 ```
 
-#### Fetching posts with specifed term
+#### Fetching posts with specified term
 
-You may need to retrieve only posts with specifed term. The `withTerm` method with desired `Assely\Adapter\Term` instance passed as argument will return only posts which have this term.
+You may need to retrieve only posts with a specifed term. The `withTerm` method with desired `Assely\Adapter\Term` instance passed as the argument will return only posts which have this term.
 
 ```php
 use App\Posttypes\Movies;
@@ -230,7 +230,7 @@ public function index(Movies $movies, Genre $genres) {
 
 #### Custom query
 
-Needs something more complex? You can use `query` method with array of [Query Parameters](https://codex.wordpress.org/Class_Reference/WP_Query#Parameters) as argument.
+Needs something more complex? You can use `query` method with an array of [Query Parameters](https://codex.wordpress.org/Class_Reference/WP_Query#Parameters) as the argument.
 
 ```php
 use App\Posttypes\Movies;
@@ -259,7 +259,7 @@ public function index(Movies $movies) {
 <a name="inserting-posts"></a>
 ### [Inserting posts](#inserting-posts)
 
-Use `create` method with array of properties and values for inserting new post to the database.
+Use `create` method with an array of properties and values for inserting new post to the database.
 
 ```php
 use App\Posttypes\Movies;
@@ -273,7 +273,7 @@ public function index(Movies $movies) {
 
 ##### Inserting Query Exception
 
-The `createdOrFail` method will insert new post, but when error occurs `Assely\Database\QueryException` will be thrown.
+The `createdOrFail` method will insert new post, but when an error occurs `Assely\Database\QueryException` will be thrown.
 
 ```php
 $movies->createOrFail([
@@ -284,7 +284,7 @@ $movies->createOrFail([
 <a name="updating-posts"></a>
 ### [Updating posts](#updating-posts)
 
-To update a post, you need to set new property values on retrived `Assely\Adapter\Post` instance, and then call `save` method.
+To update a post, you need to set new property values on retrieved `Assely\Adapter\Post` instance, and then call `save` method.
 
 ```php
 use App\Posttypes\Movies;
@@ -301,7 +301,7 @@ public function index(Movies $movies) {
 <a name="deleting-posts"></a>
 ### [Deleting posts](#deleting-posts)
 
-Call `destroy` method on retrieved `Assely\Adapter\Post` instance to remove post from database.
+Call `destroy` method on retrieved `Assely\Adapter\Post` instance to remove a post from the database.
 
 ```php
 use App\Posttypes\Movies;
@@ -316,7 +316,7 @@ public function index(Movies $movies) {
 <a name="displaying-posts"></a>
 ## [Displaying posts](#displaying-posts)
 
-You have access to bunch of diffrent properties. List of all you can find in [adapters documentation](/docs/adapters#post-adaptee).
+You have access to the bunch of different properties. List of all you can find in [adapters documentation](/docs/adapters#post-adaptee).
 
 ```html
 <div class="movie">
@@ -340,13 +340,13 @@ Easy as pie. Just standard loop.
 <a name="accessing-post-thumbnail"></a>
 ### [Accessing post thumbnail](#accessing-post-thumbnail)
 
-You can access post thumbnail image with `thumbnail` property. By default, it contains image size configured in `config/images.php` file. This property returns `Assely\Thumbnail\Image` instance with various image informations.
+You can access post thumbnail image with `thumbnail` property. By default, it contains image size configured in `config/images.php` file. This property returns `Assely\Thumbnail\Image` instance with various image information.
 
 ```html
 <img src="{{ $movie->thumbnail->link }}" alt="{{ $movie->thumbnail->title }}">
 ```
 
-You may need to display thumbnail in diffrent size. Use `thumbnail` method with thumbnail size slug as argument.
+You may need to display a thumbnail in different size. Use `thumbnail` method with thumbnail size slug as the argument.
 
 For example, you have registered [custom thumbnail size](/docs/thumbnail#creating-thumbnail) named `hero`, you can access it with this name.
 
@@ -367,13 +367,13 @@ Of course, before displaying image, you can check if post thumbnail is actually 
 <a name="accessing-post-metadata"></a>
 ### [Accessing post metadata](#accessing-post-metadata)
 
-Your posts may hold various metadata. The `meta` method helps you retrieve these informations. You only need to pass metadata key under which they are stored.
+Your posts may hold various metadata. The `meta` method helps you retrieve this information. You only need to pass metadata key under which they are stored.
 
 ```html
 {{ $movie->meta('movie_details') }}
 ```
 
-It returns an `Illuminate\Support\Collection`, so you have flexible way to access it's values.
+It returns an `Illuminate\Support\Collection`, so you have a flexible way to access its values.
 
 ```html
 {{ $movie->meta('movie_details')->get('release_date') }}
@@ -394,7 +394,7 @@ To retrieve all terms assigned to the post, you can use `terms` property.
 
 #### Getting terms of specific taxonomy assigned to the post
 
-`terms` method with taxonomy slug as argument will retrieve only post terms from specific taxonomy.
+`terms` method with taxonomy slug as the argument will retrieve only post terms from the specific taxonomy.
 
 ```html
 @foreach($movie->terms('genre') as $genre)
@@ -405,7 +405,7 @@ To retrieve all terms assigned to the post, you can use `terms` property.
 <a name="retrieving-post-comments"></a>
 ### [Retrieving post comments](#retrieving-post-comments)
 
-You can also access collection of post comments.
+You can also access a collection of post comments.
 
 ```html
 @foreach($movie->comments as $comment)

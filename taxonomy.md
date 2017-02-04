@@ -21,7 +21,7 @@
 
 [alert type="info"]Taxonomies are a part of singularities. I encourage you to read general [Singularities](/docs/singularities) documentation chapter.[/alert]
 
-[Taxonomy](https://codex.wordpress.org/Taxonomies) allows to classify your posttypes in groups. The names for the different groupings in a taxonomy are called terms.
+[Taxonomy](https://codex.wordpress.org/Taxonomies) allows for classifying your post types in groups. The names for the different groupings in a taxonomy are called terms.
 
 <a name="creating-taxonomy"></a>
 ## [Creating taxonomy](#creating-taxonomy)
@@ -38,7 +38,7 @@ wp assely:make taxonomy Genres
 
 ##### Specifying slug
 
-This will create taxonomy with `genres` slug, but you can specify it with `--slug` option.
+This will create a taxonomy with `genres` slug, but you can specify it with `--slug` option.
 
 ```bash
 wp assely:make taxonomy Genres --slug="genre"
@@ -46,7 +46,7 @@ wp assely:make taxonomy Genres --slug="genre"
 
 ##### Specifying owners
 
-You can also define to which posttype this taxonomy belongs to. Enter it's classname to the `--belongsto` option.
+You can also define to which post type this taxonomy belongs to. Enter it's classname to the `--belongsto` option.
 
 ```bash
 wp assely:make taxonomy Genres --belongsto="App\Posttypes\Movies"
@@ -54,7 +54,7 @@ wp assely:make taxonomy Genres --belongsto="App\Posttypes\Movies"
 
 ### Manually created class file
 
-Make file with class that extends base `Assely\Taxonomy\Taxonomy` class.
+Make a file with the class that extends base `Assely\Taxonomy\Taxonomy` class.
 
 The `slug` property is required. This value determines under which name your taxonomy will be registered and accessible.
 
@@ -165,7 +165,7 @@ public function arguments()
 <a name="the-relation-method"></a>
 ### [The Relation method](#the-relation-method)
 
-Taxonomies must belong to one or multiple posttypes. The `relation` method allows you to describe where taxonomy should be assigned. Use `belongsTo` method with array of post types class names as parameter.
+Taxonomies must belong to one or multiple post types. The `relation` method allows you to describe where taxonomy should be assigned. Use `belongsTo` method with an array of post types class names as the parameter.
 
 ```php
 public function relation()
@@ -180,7 +180,7 @@ public function relation()
 <a name="the-fields-method"></a>
 ### [The Fields method](#the-fields-method)
 
-The `fields` method allows to list custom fields which will be managed by term.
+The `fields` method allows for listing custom fields which will be managed by the term.
 
 [alert type="info"]More detailed descriptions about fields you can read in [Fielder documentation](/docs/field-types).[/alert]
 
@@ -198,9 +198,9 @@ public function fields()
 <a name="the-columns-method"></a>
 ### [The Columns method](#the-columns-method)
 
-The `columns` method allows to define custom taxonomy columns which are displayed on the list of terms.
+The `columns` method allows for defining custom taxonomy columns which are displayed on the list of terms.
 
-Taxonomies accepts one kind of column: term.
+Taxonomies accept one kind of column: term.
 
 ```php
 public function columns()
@@ -216,7 +216,7 @@ public function columns()
 <a name="using-taxonomy"></a>
 ## [Using taxonomy](#using-taxonomy)
 
-Injecting the taxonomy repository provides fluent access to it's terms. However, you can also use `Term` facade.
+Injecting the taxonomy repository provides fluent access to its terms. However, you can also use `Term` facade.
 
 ```php
 Term::type('genres')->find(1);
@@ -225,11 +225,11 @@ Term::type('genres')->find(1);
 <a name="quering-terms"></a>
 ### [Quering terms](#quering-terms)
 
-Of course, once you created and registered your taxonomy, you can start retrieving terms for your views. In this section you will learn how you can query your custom taxonomies.
+Of course, once you created and registered your taxonomy, you can start retrieving terms for your views. In this section, you will learn how you can query your custom taxonomies.
 
 #### Fetching multiple terms
 
-The `all` method will retrive all of the taxonomy terms. This method returns an instance of `Illuminate\Support\Collection`, so you can easily modify results with [diffrent methods](https://laravel.com/docs/5.2/collections#available-methods).
+The `all` method will retrieve all of the taxonomy terms. This method returns an instance of `Illuminate\Support\Collection`, so you can easily modify results with [diffrent methods](https://laravel.com/docs/5.2/collections#available-methods).
 
 ```php
 use App\Taxonomies\Genres;
@@ -243,7 +243,7 @@ public function index(Genres $genres) {
 
 #### Retrieving single post
 
-You can also immediately search for single term. Pass term id as the `find` method argument.
+You can also immediately search for a single term. Pass term id as the `find` method argument.
 
 ```php
 use App\Taxonomies\Genres;
@@ -257,7 +257,7 @@ public function index(Genres $genres) {
 
 ##### Not Found Query Exception
 
-Sometimes you want to throw an exception when term was not found. The `findOrFail` method returns found term, but if not `Assely\Database\QueryException` will be thrown.
+Sometimes you want to throw an exception when a term was not found. The `findOrFail` method returns the found term, but if not `Assely\Database\QueryException` will be thrown.
 
 ```php
 $genres->findOrFail(1);
@@ -265,7 +265,7 @@ $genres->findOrFail(1);
 
 #### Custom query
 
-Needs something more complex? You can use `query` method with array of [ parameters](https://developer.wordpress.org/reference/functions/get_terms/) as argument.
+Needs something more complex? You can use `query` method with an array of [ parameters](https://developer.wordpress.org/reference/functions/get_terms/) as the argument.
 
 ```php
 use App\Taxonomies\Genres;
@@ -284,7 +284,7 @@ public function index(Genres $genres) {
 <a name="inserting-terms"></a>
 ### [Inserting terms](#inserting-terms)
 
-Use `create` method with array of properties and values for inserting new post to the database.
+Use `create` method with an array of properties and values for inserting new post to the database.
 
 ```php
 use App\Taxonomies\Genres;
@@ -298,7 +298,7 @@ public function index(Genres $movies) {
 
 ##### Inserting Query Exception
 
-The `createdOrFail` method will insert new genre, but when error occurs `Assely\Database\QueryException` will be thrown.
+The `createdOrFail` method will insert new genre, but when an error occurs `Assely\Database\QueryException` will be thrown.
 
 ```php
 $genres->createOrFail([
@@ -309,7 +309,7 @@ $genres->createOrFail([
 <a name="updating-terms"></a>
 ### [Updating terms](#updating-terms)
 
-To update a term, you need to set new property values on retrived `Assely\Adapter\Term` instance, and then call `save` method.
+To update a term, you need to set new property values on retrieved `Assely\Adapter\Term` instance, and then call `save` method.
 
 ```php
 use App\Taxonomies\Genres;
@@ -326,7 +326,7 @@ public function index(Genres $genres) {
 <a name="deleting-terms"></a>
 ### [Deleting terms](#deleting-terms)
 
-Call `destroy` method on retrieved `Assely\Adapter\Term` instance to remove term from database.
+Call `destroy` method on retrieved `Assely\Adapter\Term` instance to remove a term from the database.
 
 ```php
 use App\Taxonomies\Genres;
@@ -341,7 +341,7 @@ public function index(Genres $genres) {
 <a name="rendering-terms-in-templates"></a>
 ### [Rendering terms in templates](#rendering-terms-in-templates)
 
-You have access to bunch of diffrent properties. List of all you can find in [adapters documentation](/docs/adapters#term).
+You have access to the bunch of different properties. List of all you can find in [adapters documentation](/docs/adapters#term).
 
 ```html
 <div class="genre">
@@ -361,7 +361,7 @@ Easy as pie. Just standard loop.
 
 #### Accessing term metadata
 
-Your terms may hold various metadata. The `meta` method helps you retrieve these informations. You only need to pass metadata key under which they are stored.
+Your terms may hold various metadata. The `meta` method helps you retrieve these information. You only need to pass metadata key under which they are stored.
 
 ```html
 {{ $genre->meta('color') }}
@@ -369,7 +369,7 @@ Your terms may hold various metadata. The `meta` method helps you retrieve these
 
 #### Retrieving term posts
 
-To retrieve the posts with specific term, you can use `posts` method with taxonomy slug as argument.
+To retrieve the posts with a specific term, you can use `posts` method with taxonomy slug as the argument.
 
 ```html
 @foreach($genres->all() as $genre)

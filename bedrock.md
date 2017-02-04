@@ -1,5 +1,5 @@
 - [Introduction](#introduction)
-	+ [Installing Bedrock](#installing-bedrock)
+    + [Installing Bedrock](#installing-bedrock)
     + [Scaffolding Assely application](#scaffolding-assely-application)
     + [Requiring packages](#requiring-packages)
     + [Autoloading application](#autoloading-application)
@@ -14,7 +14,7 @@ The Assely framework perfectly integrates with [Bedrock](https://roots.io/bedroc
 <a name="installing-bedrock"></a>
 ### [Installing Bedrock](#installing-bedrock)
 
-Basically follow up the [Bedrock documentation](https://roots.io/bedrock/docs/installing-bedrock/). It is simple and well-explanatory.
+Basically follow up the [Bedrock documentation](https://roots.io/bedrock/docs/installing-bedrock/). It is simple and well explanatory.
 
 <a name="scaffolding-assely-application"></a>
 ### [Scaffolding Assely application](#scaffolding-assely-application)
@@ -42,7 +42,7 @@ Now, we will be working with Bedrock's `composer.json` file. Get back to the bed
 composer require assely/framework @dev
 ```
 
-.. or manualy add package entry to the require section in `composer.json` file.
+.. or manually add package entry to the require section in `composer.json` file.
 
 ```json
 "require": {
@@ -53,7 +53,7 @@ composer require assely/framework @dev
 <a name="autoloading-application"></a>
 ### [Autoloading application](#autoloading-application)
 
-In order to properly load project files, we must tell composer where he can find it. Add PSR-4 autoload rules for your application in the Bedrock's `composer.json` file. Insert `autoload` section with namespace and path of application directory.
+In order to properly load project files, we must tell composer where he can find it. Add PSR-4 autoload rules for your application in the Bedrock's `composer.json` file. Insert `autoload` section with namespace and path of the application directory.
 
 ```json
 "autoload": {
@@ -66,7 +66,7 @@ In order to properly load project files, we must tell composer where he can find
 <a name="installing-composer-dependences"></a>
 ### [Installing Composer dependences](#installing-composer-dependences)
 
-Finally, last step. While still being in the Bedrock's root folder run `composer install` to resolve project dependences and generate autoloading files.
+Finally, last step. While still being in the Bedrock's root folder run `composer install` to resolve project dependencies and generate autoloading files.
 
 [alert type="info"]The Assely framework packages are installed as plugins in `web/app/plugins` directory.[/alert]
 

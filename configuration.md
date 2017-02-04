@@ -1,6 +1,6 @@
 - [Configuration](#configuration)
     + [Informations](#informations)
-	+ [Config files](#config-files)
+    + [Config files](#config-files)
     + [Theme Support Options](#theme-support-options)
     + [Screenshot](#screenshot)
 - [Additional Informations](#additional-informations)
@@ -13,14 +13,14 @@
 <a name="informations"></a>
 ### [Informations](#informations)
 
-As same as standard theme, we need to fill theme informations inside `style.css` file. All necessary guides you will find in [Codex](https://codex.wordpress.org/Theme_Development#Theme_Stylesheet).
+As same as a standard theme, we need to fill theme information inside `style.css` file. All necessary guides you will find in [Codex](https://codex.wordpress.org/Theme_Development#Theme_Stylesheet).
 
 [alert type="danger"]`styles.css` file is responsible **only** for providing theme informations that are displayed in `Apperance > Themes`. Do not write in here any css declarations.[/alert]
 
 <a name="config-files"></a>
 ### [Config files](#config-files)
 
-All application configs are located inside `config` directory. Every option has short description, scan this files in order to know what each do.
+All application configs are located inside `config` directory. Every option has a short description, scan this files in order to know what each does.
 
 <a name="theme-support-options"></a>
 ### [Theme Support Options](#theme-support-options)
@@ -29,7 +29,7 @@ All application configs are located inside `config` directory. Every option has 
 
 We enabled most common theme supports for you in `app\Providers\AppServiceProvider` class and `addSupport` method. However, feel free to add your own entries there.
 
-To enable additonal option, simple add new position to the array where key is option slug and value is option argument.
+To enable an additional option, simply add a new position to the array where the key is option slug and value is option argument.
 
 ```php
 protected function addSupport()
@@ -45,7 +45,7 @@ protected function addSupport()
 <a name="screenshot"></a>
 ### [Screenshot](#screenshot)
 
-Along with styles.css there is also standard `screenshot.png` image. Change it if you want a custom theme thumbnail.
+Along with styles.css, there is also standard `screenshot.png` image. Change it if you want a custom theme thumbnail.
 
 <a name="additional-informations"></a>
 ## [Additional Informations](#additional-informations)

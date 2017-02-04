@@ -9,7 +9,7 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-The [AJAX](https://codex.wordpress.org/Glossary#AJAX) component allows to define various actions, which you can afterwards hit with HTTP requests in order to create smooth and dynamic JavaScript components for your application.
+The [AJAX](https://codex.wordpress.org/Glossary#AJAX) component allows for defining various actions, which you can afterward hit with HTTP requests in order to create smooth and dynamic JavaScript components for your application.
 
 <a name="basics-of-ajax"></a>
 ## [Basics of AJAX](#basics-of-ajax)
@@ -27,7 +27,7 @@ Ajax::listen($action, $callback);
 
 ##### Listening only for autorized or unauthorized actions
 
-By default, AJAX listen for both autorized and unauthorized actions. However, you can narrow that with third argument.
+By default, AJAX listens for both authorized and unauthorized actions. However, you can narrow that with the third argument.
 
 ```php
 // Responds only to logged in users
@@ -56,7 +56,7 @@ Ajax::listen('five_latest_movies', function() {
 
 #### Response via Closure
 
-For simpler actions the closure may be entirely sufficient.
+For simpler actions, the closure may be entirely sufficient.
 
 ```php
 Ajax::listen('action', function () {
@@ -108,7 +108,7 @@ class HomeController extends Controller
 
 Finally, we can reach actions from the frontend. As example we will use `jQuery.ajax()` to perform an asynchronous HTTP request to our action endpoint.
 
-[alert type="warning"]You have to pass nonce token with your AJAX request, otherwise action will return error message.[/alert]
+[alert type="warning"]You have to pass nonce token with your AJAX request, otherwise action will return an error message.[/alert]
 
 ```js
 jQuery.ajax({
@@ -130,7 +130,7 @@ jQuery.ajax({
 <a name="protecting-actions-from-csrf-with-nonces"></a>
 ### [Protecting actions from CSRF with nonces](#protecting-actions-from-csrf-with-nonces)
 
-Action calls **must** include nonce token for protecting against CSRF attacts. Along with action name pass `Assely.ajax.nonce` value in `nonce` named key.
+Action calls **must** include a nonce token for protecting against CSRF attacks. Along with action name pass `Assely.ajax.nonce` value in `nonce` named key.
 
 ```js
 {

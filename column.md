@@ -12,12 +12,12 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-Custom Columns give you ability to show your entries meta values immediately on the list screens of singularities.
+Custom Columns give you the ability to show your entries meta values immediately on the list screens of singularities.
 
 <a name="registering-columns"></a>
 ## [Registering Columns](#registering-columns)
 
-Each singularity that supports custom columns have `columns` method. This method needs to return an array of `Column` instances.
+Each singularity that supports custom columns has `columns` method. This method needs to return an array of `Column` instances.
 
 ```php
 use Column;
@@ -32,7 +32,7 @@ public function columns() {
 <a name="column-types"></a>
 ## [Column types](#column-types)
 
-List of singularites and they supported custom column types:
+List of singularities and they supported custom column types:
 
 | Singularity type | Supported column types |
 |---|---|
@@ -57,7 +57,7 @@ Column::metabox('App\Metaboxes\MovieDetails', 'release_date');
 <a name="taxonomy-column"></a>
 ### [Taxonomy Column](#taxonomy-column)
 
-Taxonomy column allows for presenting choosen terms of your posts taxonomies.
+Taxonomy column allows for presenting chosen terms of your posts taxonomies.
 
 ```php
 Column::taxonomy($taxonomy);
@@ -86,7 +86,7 @@ Column::term('App\Taxonomies\Genres', 'color');
 <a name="profile-column"></a>
 ### [Profile Column](#profile-column)
 
-Profile column allows for presenting metadata values of your users profiles. It requires two arguments. First is desired taxonomy classname, second is a [field depth path](#pulling-out-fields-with-dot-notation) in "dot" notation.
+Profile column allows for presenting metadata values of your user's profiles. It requires two arguments. First is desired taxonomy classname, second is a [field depth path](#pulling-out-fields-with-dot-notation) in "dot" notation.
 
 ```php
 Column::profile($profile, $field);

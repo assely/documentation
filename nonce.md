@@ -8,9 +8,9 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-[Nonces](https://codex.wordpress.org/WordPress_Nonces) helps protect your actions form misuses by generating and verifying tokens.
+[Nonces](https://codex.wordpress.org/WordPress_Nonces) helps protect your actions from misuses by generating and verifying tokens.
 
-Nonces are used to verify if the person, who's doing a specific operation, are entitled to do so. It identifies operiation beetween requests.
+Nonces are used to verify if the person, who's doing a specific operation, are entitled to do so. It identifies operation between requests.
 
 <a name="basics-of-nonces"></a>
 ## [Basics of Nonces](#basics-of-nonces)
@@ -34,7 +34,7 @@ Calling `create` method will return generated token.
 $token = Nonce::create($slug);
 ```
 
-You have to pass this token further and verify before finalizing the operation. Usually this token is transfered as part of request, as url query parameter or form hidden input.
+You have to pass this token further and verify before finalizing the operation. Usually, this token is transferred as part of the request, as URL query parameter or form hidden input.
 
 <a name="verifying-nonces"></a>
 ### [Verifying Nonces](#verifying-nonces)
@@ -50,7 +50,7 @@ if (Nonce::verify($token)) {
 <a name="outputing-nonces-inputs"></a>
 ### [Outputing Nonce Inputs](#outputing-nonces-inputs)
 
-If you need to add nonce inputs to your form there is `fields` method that will help you. It outputs html inputs markup with already generated tokens.
+If you need to add nonce inputs to your form there is `fields` method that will help you. It outputs HTML inputs markup with already generated tokens.
 
 ```php
 Nonce::fields('token-key');

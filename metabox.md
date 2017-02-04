@@ -47,7 +47,7 @@ wp assely:make metabox MovieDetails --belongsto="App\Posttypes\Movies"
 
 ### Manually created class file
 
-Make file with class that extends base `Assely\Metabox\Metabox` class.
+Make a file with the class that extends base `Assely\Metabox\Metabox` class.
 
 The `slug` property is required. This value determines under which name your metadata will be registered and accessible.
 
@@ -138,7 +138,7 @@ public function arguments()
 
 | Parameter name | Default value | Description |
 |---------|---------|---------|
-| title | `[]` | Array of titles, where first element is singular variant, second a plural. |
+| title | `[]` | Array of titles, where the first element is a singular variant, second a plural. |
 | description | `''` | Description text displayed above all fields. |
 | location | `'normal'` | The location within the screen where the boxes should display. Can be `normal`, `side`, and `advanced`. |
 | priority | `'default'` | Showing priority. Can be `default`, `low` and `height` |
@@ -147,7 +147,7 @@ public function arguments()
 <a name="the-relation-method"></a>
 ### [The Relation method](#the-relation-method)
 
-Metabox must belong to one or multiple singularities. The `relation` method allows you to describe where matabox should be assigned. Use `belongsTo` method with array of singularity classnames as parameter.
+Metabox must belong to one or multiple singularities. The `relation` method allows you to describe where matabox should be assigned. Use `belongsTo` method with an array of singularity classnames as the parameter.
 
 [alert type="info"]Metaboxes can be assigned to the Posts, Pages, Comments and all other registered Custom Posts.[/alert]
 
@@ -172,7 +172,7 @@ public function relation()
 <a name="the-fields-method"></a>
 ### [The Fields method](#the-fields-method)
 
-The `fields` method allows to list custom fields which will be managed by metabox.
+The `fields` method allows for listing custom fields which will be managed by metabox.
 
 [alert type="info"]More detailed descriptions about fields you can read in [Fielder documentation](/docs/fielder-usage).[/alert]
 

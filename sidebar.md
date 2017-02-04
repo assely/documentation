@@ -10,7 +10,7 @@
 
 The WordPress [Sidebars](https://codex.wordpress.org/Sidebars) are areas where you may allocate customizable widgets. Next, inside your application templates, you can display all widgets assigned to the specified sidebar.
 
-Sidebars creates easily customizable areas, which can be managed inside `Apperance > Widgets` administration panel.
+Sidebars create easily customizable areas, which can be managed inside `Appearance > Widgets` administration panel.
 
 <a name="basics-of-sidebars"></a>
 ## [Basics of sidebars](#basics-of-sidebars)
@@ -28,7 +28,7 @@ Sidebar::create('primary');
 
 ##### Arguments
 
-Create method accepts options as second argument.
+Create method accepts options as the second argument.
 
 ```php
 Sidebar::create('primary', [
@@ -51,7 +51,7 @@ List of available options:
 <a name="rendering-sidebar"></a>
 ### [Rendering sidebar](#rendering-sidebar)
 
-To render sidebar content just call `render` on previously picked sidebar.
+To render sidebar content just call `render` on a previously picked sidebar.
 
 ```html
 <div class="sidebar--primary">

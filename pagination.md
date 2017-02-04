@@ -48,9 +48,9 @@ class MoviesController extends Controller {
 
 #### Paginating Posts before Quering
 
-Next, you need to setup pagination before quering results. Use `paginate` method where and pass current page number as first argument.
+Next, you need to setup pagination before querying results. Use `paginate` method where and pass current page number as the first argument.
 
-By default, number of posts displayed per page are specifed by `get_option('posts_per_page')` option. However, if you uses diffrent number you can pass it as second argument.
+By default, number of posts displayed per page are specified by `get_option('posts_per_page')` option. However, if you uses a diffrent number you can pass it as the second argument.
 
 ```php
 Post::type('movies')->paginate($paged, $perPage = null);
@@ -58,7 +58,7 @@ Post::type('movies')->paginate($paged, $perPage = null);
 
 #### Creating Pagination Instance
 
-Last thing, make pagination instance. Simply call `make` method with current page number as argument and pass it to the view.
+The last thing, make pagination instance. Simply call `make` method with current page number as argument and pass it to the view.
 
 ```php
 Pagination::make($paged, $perPage = null);
@@ -93,7 +93,7 @@ class MoviesController extends Controller {
 <a name="displaying-pagination"></a>
 ### [Displaying Pagination](#displaying-pagination)
 
-You are ready to display results of pagination inside your views. You have access to all nessecary elements on pagination and pagination items instances. Freedom in building pagination markup.
+You are ready to display results of pagination inside your views. You have access to all necessary elements on pagination and pagination items instances. Freedom in building pagination markup.
 
 #### Pagination Properties
 

@@ -19,9 +19,9 @@ This singularity, unlike other, is registered by default inside `App\Providers\S
 <a name="columns-on-the-list-of-users"></a>
 ## [Columns on the list of Users](#columns-on-the-list-of-users)
 
-The `columns` method inside `app\Users.php` file allows to define custom columns which are displayed on the list of users.
+The `columns` method inside the `app\Users.php` file allows for defining custom columns which are displayed on the list of users.
 
-Users accepts one kind of column: user.
+Users accept one kind of column: user.
 
 ```php
 public function columns()
@@ -50,11 +50,11 @@ public function index(Users $users) {
 <a name="quering-user"></a>
 ### [Quering User](#quering-user)
 
-In this section you will learn how you can query users of your application.
+In this section, you will learn how you can query users of your application.
 
 #### Fetching multiple Users
 
-The `all` method will retrive all of the users. This method returns an instance of `Illuminate\Support\Collection`, so you can easily modify results with diffrent [helper methods](https://laravel.com/docs/5.2/collections#available-methods).
+The `all` method will retrieve all of the users. This method returns an instance of `Illuminate\Support\Collection`, so you can easily modify results with different [helper methods](https://laravel.com/docs/5.2/collections#available-methods).
 
 ```php
 $users = User::all();
@@ -62,7 +62,7 @@ $users = User::all();
 
 #### Retrieving single User
 
-You can also immediately search for single user. Pass user id as the `find` method argument.
+You can also immediately search for a single user. Pass user id as the `find` method argument.
 
 ```php
 $user = User::find(1);
@@ -78,7 +78,7 @@ User::findBy('email', 'user@example.com')
 
 ##### Not Found Query Exception
 
-Sometimes you want to throw an exception when user was not found. The `findOrFail` method returns found user, but if not, the `Assely\Database\QueryException` will be thrown.
+Sometimes you want to throw an exception when a user was not found. The `findOrFail` method returns the found user, but if not, the `Assely\Database\QueryException` will be thrown.
 
 ```php
 User::findOrFail(1);
@@ -86,7 +86,7 @@ User::findOrFail(1);
 
 #### Custom Query
 
-Needs something more complex? You can use `query` method with array of [ parameters](https://codex.wordpress.org/Class_Reference/WP_User_Query#Parameters) as argument.
+Needs something more complex? You can use `query` method with an array of [ parameters](https://codex.wordpress.org/Class_Reference/WP_User_Query#Parameters) as the argument.
 
 ```php
 User::query([
@@ -102,7 +102,7 @@ User::query([
 <a name="inserting-users"></a>
 ### [Inserting Users](#inserting-users)
 
-Use `create` method with array of properties and values for inserting new user to the database.
+Use `create` method with an array of properties and values for inserting new user to the database.
 
 ```php
 User::create([
@@ -112,7 +112,7 @@ User::create([
 
 ##### Inserting Query Exception
 
-The `createdOrFail` method will insert new user, but when error occurs, the `Assely\Database\QueryException` will be thrown.
+The `createdOrFail` method will insert a new user, but when an error occurs, the `Assely\Database\QueryException` will be thrown.
 
 ```php
 User::createOrFail([
@@ -123,7 +123,7 @@ User::createOrFail([
 <a name="updating-users"></a>
 ### [Updating Users](#updating-users)
 
-To update a user, you need to set new property values on retrived `Assely\Adapter\User` instance, and then call `save` method.
+To update a user, you need to set new property values on retrieved `Assely\Adapter\User` instance, and then call `save` method.
 
 ```php
 $user = User::find(1);
@@ -136,7 +136,7 @@ $user->save();
 <a name="deleting-users"></a>
 ### [Deleting User](#deleting-users)
 
-Call `destroy` method on retrieved `Assely\Adapter\User` instance to remove user from database.
+Call `destroy` method on retrieved `Assely\Adapter\User` instance to remove a user from the database.
 
 ```php
 $user = User::find(1);
@@ -147,7 +147,7 @@ $user->destroy();
 <a name="working-with-user-roles"></a>
 ### [Working with User roles](#working-with-user-roles)
 
-WordPress users can have diffrent roles and capabilities. You can verify what users can and cannot do.
+WordPress users can have different roles and capabilities. You can verify what users can and cannot do.
 
 ##### Getting User roles
 
@@ -157,7 +157,7 @@ $user_roles = User::find(1)->roles;
 
 ##### Verifing User roles
 
-With `hasRole` method you can check if user has specifed role.
+With `hasRole` method you can check if a user has the specifed role.
 
 ```php
 $user = User::find(1);
@@ -169,7 +169,7 @@ if ($user->hasRole('Administrator')) {
 
 ##### Verifing User capabilities
 
-You can verify what users can and cannot do with `can` method. Reference to the [Codex](https://codex.wordpress.org/Roles_and_Capabilities#Capabilities) for list of all available compabilities.
+You can verify what users can and cannot do with `can` method. Reference to the [Codex](https://codex.wordpress.org/Roles_and_Capabilities#Capabilities) for a list of all available capabilities.
 
 ```php
 $user = User::find(1);
@@ -183,7 +183,7 @@ if ($user->can('edit_posts')) {
 <a name="rendering-user-in-templates"></a>
 ### [Rendering Users in templates](#rendering-user-in-templates)
 
-You have access to bunch of diffrent properties. List of all you can find in [adapters documentation](/docs/adapters#user).
+You have access to the bunch of different properties. List of all you can find in [adapters documentation](/docs/adapters#user).
 
 ```html
 <div class="user">
@@ -194,7 +194,7 @@ You have access to bunch of diffrent properties. List of all you can find in [ad
 
 #### Accessing Users metadata
 
-Your users may hold various metadata. The `meta` method helps you retrieve these informations. You only need to pass metadata key under which they are stored.
+Your users may hold various metadata. The `meta` method helps you retrieve this information. You only need to pass metadata key under which they are stored.
 
 ```html
 {{ $user->meta('score') }}

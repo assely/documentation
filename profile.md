@@ -15,7 +15,7 @@
 
 [alert type="info"]Profiles are a part of singularities. I encourage you to read general [Singularities](/docs/singularities) documentation chapter.[/alert]
 
-Profiles allows you to display custom fields in your users profiles.
+Profiles allow you to display custom fields in your user's profiles.
 
 <a name="creating-profile"></a>
 ## [Creating Profile](#creating-profile)
@@ -32,7 +32,7 @@ wp assely:make profile SocialProfiles
 
 ##### Specifying slug
 
-This will create profile with `socialprofiles` slug, but you can specify it with `--slug` option.
+This will create a profile with `socialprofiles` slug, but you can specify it with `--slug` option.
 
 ```bash
 wp assely:make profile SocialProfiles --slug="social-profiles"
@@ -48,7 +48,7 @@ wp assely:make profile SocialProfiles --belongsto="App\Users"
 
 ### Manually created class file
 
-Make file with class that extends base `Assely\Profile\Profile` class.
+Make a file with the class that extends base `Assely\Profile\Profile` class.
 
 The `slug` property is required. This value determines under which name your metadata will be registered and accessible.
 
@@ -110,7 +110,7 @@ class SocialProfiles extends Profile
 <a name="registering-profile"></a>
 ### [Registering Profile](#registering-profile)
 
-All profiles are registered in the `config/app.php` configuration file. This file contains a `profiles` array where you can add your newly created users profiles.
+All profiles are registered in the `config/app.php` configuration file. This file contains a `profiles` array where you can add your newly created user's profiles.
 
 ```php
 'profiles' => [
@@ -123,7 +123,7 @@ All profiles are registered in the `config/app.php` configuration file. This fil
 <a name="publishing-profiles-for-users"></a>
 ### [Publishing Profiles for Users](#publishing-profiles-for-users)
 
-By default, profile fields are private and visible only for administrators, but if you want to allow users to fill the fields themselves you need to change profile visibility to public.
+By default, profile fields are private and visible only for administrators, but if you want to allow users to fill the fields themselves you need to change profile visibility to the public.
 
 All you have to do is use `Assely\Profile\MakePublic` trait inside your created profile. That is it.
 
@@ -155,14 +155,14 @@ public function arguments()
 
 | Parameter name | Default value | Description |
 |---------|---------|---------|
-| title | `[]` | Array of titles, where first element is singular variant, second a plural. |
+| title | `[]` | Array of titles, where the first element is a singular variant, second a plural. |
 | description | `''` | Description text displayed above all fields. |
 | preserve | `'single'` | How profile [preserves his metadata](/docs/singularities#configuring-how-metadata-is-stored). |
 
 <a name="the-relation-method"></a>
 ### [The Relation Method](#the-relation-method)
 
-Profiles needs to belongs somewhere. The `relation` method allows you to describe where profile should appear. Use `belongsTo` method with array of profile owners as parameter.
+Profiles need to belongs somewhere. The `relation` method allows you to describe where profile should appear. Use `belongsTo` method with an array of profile owners as the parameter.
 
 ```php
 public function relation()
@@ -174,7 +174,7 @@ public function relation()
 <a name="the-fields-method"></a>
 ### [The Fields Method](#the-fields-method)
 
-The `fields` method allows to list custom fields which will be managed by profile.
+The `fields` method allows for listing custom fields which will be managed by profile.
 
 [alert type="info"]More detailed descriptions about fields you can read in [Fielder documentation](/docs/field-types).[/alert]
 

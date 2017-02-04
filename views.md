@@ -32,7 +32,7 @@ Make your view template inside `resources/views` directory.
 <a name="render-view-inside-controller"></a>
 ### [Render view inside controller](#render-view-inside-controller)
 
-Create controller that renders your view.
+Create a controller that renders your view.
 
 ```php
 // app/Http/Controllers/WelcomeController.php

@@ -8,7 +8,7 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-The [Post Thumbnails](https://codex.wordpress.org/Post_Thumbnails) are an images that are chosen as the representative for post.
+The [Post Thumbnails](https://codex.wordpress.org/Post_Thumbnails) are images that are chosen as the representative for the post.
 
 Registering own thumbnails allows for creating additional images sizes, beyond those shipped with WordPress.
 
@@ -30,7 +30,7 @@ Thumbnail::create('hero', [
 
 #### Arguments
 
-Create method accepts options as second argument.
+Create method accepts options as the second argument.
 
 ```php
 Thumbnail::create('hero', [
@@ -41,13 +41,13 @@ Thumbnail::create('hero', [
 
 ##### Image Cropping
 
-The `crop` argument changes how the images are resized. More about diffrent cropping options you can read in [Codex](https://developer.wordpress.org/reference/functions/add_image_size/#crop-mode).
+The `crop` argument changes how the images are resized. More about different cropping options you can read in [Codex](https://developer.wordpress.org/reference/functions/add_image_size/#crop-mode).
 
 ##### List of available options:
 
 | Option name | Default value | Description |
 |---------|---------|---------|
-| title | `[]` | Array of titles, where first element is singular variant, second a plural |
+| title | `[]` | Array of titles, where the first element is a singular variant, second a plural |
 | crop | `false` | Cropping behavior for the image. |
 | size | `[800, 600]` | Array of image dimensions (width × height). |
 
