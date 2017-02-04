@@ -53,7 +53,7 @@ Route::any($condition, $callback);
 <a name="route-parameters"></a>
 ### [Route Parameters](#route-parameters)
 
-Route parameters allows to pull values of specific URL segments, which are reflected in WP_Query.
+[alert type="info"]Basic Routing relies on [Rewrite API](https://codex.wordpress.org/Rewrite_API/add_rewrite_rule) and closes all of this messy code into one readable API. However, it's recommended to know how it is working.[/alert]
 
 WordPress uses specific names for particular properties. For example, `name` for post slug or `paged` for current pagination number. You **have to** use that names as your route parameters.
 

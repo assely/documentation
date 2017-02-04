@@ -23,7 +23,9 @@ For Trellis, you have to login into Vagrant with `vagrant ssh` command and navig
 <a name="commands"></a>
 ## [Commands](#commands)
 
-[alert type="info"]You can also create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
+The Assely framework provides bunch of ready to use WP-CLI commands, which help you develop and debug your application.
+
+[alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
 
 <a name="make-command"></a>
 ### [`wp assely:make`](#make-command)
