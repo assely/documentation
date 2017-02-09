@@ -11,7 +11,7 @@
 
 The [Menus](https://codex.wordpress.org/Navigation_Menus) are lists of links that appear on your application.
 
-Registering menus allow for creating easily customizable menus, which can be managed inside `Appearance > Menus` administration panel.
+Registering menus allow for creating easily customizable menus areas, which can be managed inside `Appearance > Menus` administration panel.
 
 <a name="basics-of-menus"></a>
 ## [Basics of menus](#basics-of-menus)
