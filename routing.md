@@ -3,13 +3,13 @@
 - [Basics of Routing](#basics-of-routing)
     + [Route Parameters](#route-parameters)
     + [Route Conditions](#route-conditions)
-- [Creating Routes](#creating-routes)
+- [Creating Standard Routes](#creating-standard-routes)
     + [Routing Homepage](#routing-homepage)
     + [Routing Posttypes](#routing-posttypes)
     + [Routing Taxonomies](#routing-taxonomies)
     + [Routing Search Results](#routing-search-results)
     + [Routing Author Page](#routing-author-page)
-
+- [Creating Custom Routes](#creating-custom-routes)
 
 <a name="introduction"></a>
 ## [Introduction](#introduction)
@@ -102,8 +102,8 @@ Route::get('{name}', function($name) {
 ]);
 ```
 
-<a name="creating-routes"></a>
-## [Creating Routes](#creating-routes)
+<a name="creating-standard-routes"></a>
+## [Creating Standard Routes](#creating-standard-routes)
 
 As was said before, you have to use specific names for route properties. Router requires these names to property resolve its values from global WP_Query.
 
@@ -255,5 +255,39 @@ Route::get('author/{author_name}', function($author_name) {
 ```php
 Route::get('author/{author_name}/page/{paged}', function($author_name, $paged) {
     //
+});
+```
+
+<a name="creating-custom-routes"></a>
+## [Creating Custom Routes](#creating-custom-routes)
+
+Creating custom routes takes place in two minor steps. First, registering new rewrite rule and then adding route which targets previously created path.
+
+[alert type="warning"]For performance reasons WordPress caches application's rewrite rules in the database. You may need to flush rewrite cache before custom routes start to working.[/alert]
+
+#### 1. Register new Custom Rewrite Rule
+
+Register new rewrite rule with desired URI in `app/Http/rewrites.php` file.
+
+[alert type="info"]Complete guide about creating Rewrite Rules you will find in [Rewrite documentation](/docs/rewrite)[/alert]
+
+```php
+// @ /app/Http/rewrites.php
+
+Rewrite::rule('favourite/movies/{from}/{to}')->where([
+    'from' => '([0-9]{4})',
+    'to' => '([0-9]{4})'
+]);
+```
+
+#### 2. Route Custom Rewrite Rules
+
+Add new route which targets URI of the rewrite rule created in previous step.
+
+```php
+// @ /app/Http/routes.php
+
+Route::get('favourite/movies/{from}/{to}', function ($from, $to) {
+   return "{$form}-{$to}"
 });
 ```

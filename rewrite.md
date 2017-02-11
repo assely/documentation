@@ -15,6 +15,8 @@ The [WordPress Rewrite API](https://developer.wordpress.org/files/2014/10/templa
 
 All application custom rewrite rules should be defined inside `app\Http\rewrites.php` file. This file is included on application bootstrap by the `App\Providers\HttpServiceProvider` class.
 
+[alert type="warning"]Remember to flush rewrite cache after creating or removing rules. You can do that with `wp assely:clear rewrites` command or manually resave "Permalinks" settings in admin panel.
+
 <a name="creating-rewrite-rule"></a>
 ### [Creating Rewrite Rule](#creating-rewrite-rule)
 
