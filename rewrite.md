@@ -15,7 +15,7 @@ The [WordPress Rewrite API](https://developer.wordpress.org/files/2014/10/templa
 
 All application custom rewrite rules should be defined inside `app\Http\rewrites.php` file. This file is included on application bootstrap by the `App\Providers\HttpServiceProvider` class.
 
-[alert type="warning"]Remember to flush rewrite cache after creating or removing rules. You can do that with `wp assely:clear rewrites` command or manually resave "Permalinks" settings in admin panel.
+[alert type="warning"]Remember to flush rewrite cache after creating or removing rules. You can do that with `wp assely:clear rewrites` command or manually resave "Permalinks" settings in admin panel.[/alert]
 
 <a name="creating-rewrite-rule"></a>
 ### [Creating Rewrite Rule](#creating-rewrite-rule)
@@ -46,9 +46,9 @@ Rewrite::rule('favourite/movies/{from}/{to}')->where([
 <a name="creating-endpoint"></a>
 ### [Creating Endpoint](#creating-endpoint)
 
-Endpoints allow you to create a group of extra rewrite rules which will be applied to all already created rules within of the matching places.
+Endpoints allow you to create a group of extra rewrite rules which will be applied to a group of all already created rules within the specifed place (like permalinks or pages).
 
-Let’s assume you want to create links to JSON representation of movies. To do that, call `endpoint` method with endpoint name. You also need to specify endpoint place with `to` method.
+Let’s assume you want to create links to JSON representation of movies. To do that, call `endpoint` method with `json` endpoint name. You also need to specify endpoint place with `to` method.
 
 [alert type="info"]Descriptions of all available places you can find in the [Codex](https://codex.wordpress.org/Rewrite_API/add_rewrite_endpoint#Available_Places)[/alert]
 
